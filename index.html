@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Laboratorios de Salud | CUTLAJO - Universidad de Guadalajara</title>
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- CABECERA INSTITUCIONAL CUTLAJO / UDEG -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="img/CUTLAJO_LABS.png" alt="Logo Universidad de Guadalajara - CUTLAJO" class="header-logo">
+                <div class="site-title-group">
+                    <span class="sub-title">Centro Universitario de Tlajomulco</span>
+                    <h1 class="main-title">LABORATORIOS DE SALUD</h1>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="main-navigation" id="mainNav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
+                
+                <!-- SUBMENÚ DESPLEGABLE EN LABORATORIOS -->
+                <li class="nav-item dropdown" id="labsDropdown">
+                    <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                        Laboratorios <span class="arrow-icon">▼</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="anatomia.html" class="dropdown-item">Anatomía</a></li>
+                        <li><a href="microscopia.html" class="dropdown-item">Microscopía</a></li>
+                        <li><a href="ciencias.html" class="dropdown-item">Ciencias</a></li>
+                        <li><a href="simulacion.html" class="dropdown-item">Simulación</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="eventos.html" class="nav-link">Eventos</a></li>
+                <li class="nav-item"><a href="reglamento.html" class="nav-link">Reglamentos</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- BANNER HERO PRINCIPAL -->
+    <section class="hero-banner">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h2>CUTLAJO LABS</h2>
+                <p>Infraestructura, tecnología y excelencia académica al servicio de la salud y la comunidad universitaria.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+        <div class="content-container">
+
+            <section class="section-block">
+                <div class="institutional-header">
+                    <h2>Excelencia en Formación</h2>
+                </div>
+                <div class="intro-card">
+                    <p>Bienvenido al portal institucional de los Laboratorios del Área de Salud del Centro Universitario de Tlajomulco. Espacios diseñados para garantizar el aprendizaje práctico, la investigación científica y la capacitación continua de nuestros estudiantes y académicos.</p> 
+                    <p>CUTLAJO Labs representa el núcleo de la experimentación técnica y el crecimiento académico integral de nuestra comunidad. Nuestro objetivo es revolucionar la educación superior mediante el acceso a equipamiento tecnológico en un ambiente de rigor académico.</p>
+                </div>
+            </section>
+
+            <!-- GRILLA DE LABORATORIOS -->
+            <section class="section-block">
+                <div class="cards-grid">
+                    
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <a href="anatomia.html"><img src="img/anatomia_humana_logo.png" alt="Laboratorio de Anatomía CUTLAJO" class="card-img"></a>
+                        </div>
+                        <div class="card-body">
+                            <a href="anatomia.html"><h3 class="card-title">Anatomía y Fisiología</h3></a>
+                            <p class="card-text">Espacios equipados con modelos anatómicos avanzados y herramientas interactivas para el estudio detallado del cuerpo humano.</p>
+                            <a href="anatomia.html" class="btn btn-primary">Ver detalles</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                           <a href="microscopia.html"><img src="img/microbiologia_logo.png" alt="Laboratorio de Microbiología" class="card-img"></a>
+                        </div>
+                        <div class="card-body">
+                            <a href="microscopia.html"><h3 class="card-title">Microbiología y Bioquímica</h3></a>
+                            <p class="card-text">Espacio especializado dedicado al estudio y análisis microscópico de estructuras biológicas, tejidos, células y microorganismos.</p>
+                            <a href="microscopia.html" class="btn btn-primary">Ver detalles</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <a href="ciencias.html"><img src="img/ciencias_logo.png" alt="Laboratorio de Ciencias Fisiológicas" class="card-img"></a>
+                        </div>
+                        <div class="card-body">
+                            <a href="ciencias.html"><h3 class="card-title">Ciencias Fisiológicas</h3></a>
+                            <p class="card-text">Espacio académico especializado destinado al fortalecimiento de las competencias prácticas de los estudiantes del área de la salud.</p>
+                            <a href="ciencias.html" class="btn btn-primary">Ver detalles</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <a href="simulacion.html"><img src="img/simulacion_logo.png" alt="Centro de Simulación Clínica" class="card-img"></a>
+                        </div>
+                        <div class="card-body">
+                            <a href="simulacion.html"><h3 class="card-title">Simulación Hospitalaria</h3></a>
+                            <p class="card-text">Espacio académico diseñado para recrear entornos clínicos reales mediante el uso de simuladores, equipos biomédicos y escenarios asistenciales controlados.</p>
+                            <a href="simulacion.html" class="btn btn-primary">Ver detalles</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="section-block">
+                <div class="institutional-header">
+                    <h2>INFORMACIÓN Y SERVICIOS DIRECTOS</h2>
+                </div>
+                <div class="quick-links-grid">
+                    <div class="quick-link-box">
+                        <h3>Recorridos Virtuales</h3>
+                        <p>Conoce nuestros laboratorios a traves de un recorrido virtual</p>
+                        <a href="recorridos.html" class="btn btn-secondary">Explora los laboratorios</a>
+                    </div>
+                    <div class="quick-link-box">
+                        <h3>Reglamento de Usos</h3>
+                        <p>Consulta los lineamientos de bioseguridad y código de conducta vigentes dentro de los laboratorios.</p>
+                        <a href="reglamento.html" class="btn btn-secondary">CONSULTAR NORMATIVA</a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3737.9945457249955!2d-103.4139776!3d20.465417199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f5100319777a3%3A0x31ccbc6255c5307c!2sCUTlajomulco%20(Centro%20Universitario%20de%20Tlajomulco)!5e0!3m2!1ses!2smx!4v1790271450670!5m2!1ses!2smx" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+
+            <div class="footer-info">
+                <h3>Ubicación</h3>
+                <p>Centro Universitario de Tlajomulco</p>
+                <p>Carretera Tlajomulco - Santa Fe Km 3.5, Tlajomulco de Zúñiga, Jalisco, México.</p>
+                <p>Junto a las instalaciones del Edificio F</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Enlaces de Interés</h3>
+                <ul>
+                    <li><a href="https://www.udg.mx" target="_blank" rel="noopener">Universidad de Guadalajara</a></li>
+                    <li><a href="http://cutlajomulco.udg.mx" target="_blank" rel="noopener">Portal CUTLAJO</a></li>
+                </ul>
+
+                <!-- REDES SOCIALES -->
+                <div class="footer-social-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons-wrapper">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/cutlajo" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram CUTLAJO">
+                            <svg viewBox="0 0 24 24" class="svg-social-icon"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+
+                        <!-- X (Twitter) -->
+                        <a href="https://x.com/cutlajo" target="_blank" rel="noopener" class="social-icon-btn" aria-label="X Twitter CUTLAJO">
+                            <svg viewBox="0 0 24 24" class="svg-social-icon"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/CUTlajomulco/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook CUTLAJO">
+                            <svg viewBox="0 0 24 24" class="svg-social-icon"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CUTLAJO Labs - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

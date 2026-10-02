@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Laboratorio de Microscopía Básica y Avanzada | CUTLAJO - Universidad de Guadalajara</title>
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- CABECERA INSTITUCIONAL CUTLAJO / UDEG -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="img/CUTLAJO_LABS.png" alt="Logo Universidad de Guadalajara - CUTLAJO" class="header-logo">
+                <div class="site-title-group">
+                    <span class="sub-title">Centro Universitario de Tlajomulco</span>
+                    <h1 class="main-title">LABORATORIOS DE SALUD</h1>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="main-navigation" id="mainNav">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item dropdown active" id="labsDropdown">
+                    <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                        Laboratorios <span class="arrow-icon">▼</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="anatomia.html" class="dropdown-item">Anatomía</a></li>
+                        <li><a href="microscopia.html" class="dropdown-item">Microscopía</a></li>
+                        <li><a href="ciencias.html" class="dropdown-item">Ciencias</a></li>
+                        <li><a href="simulacion.html" class="dropdown-item">Simulación</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="eventos.html" class="nav-link">Eventos</a></li>
+                <li class="nav-item"><a href="reglamento.html" class="nav-link">Reglamentos</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- BANNER PRINCIPAL CON SLIDESHOW (HERO) -->
+    <section class="hero-banner lab-hero" id="labMicroscopiaHero"
+    data-bg-images="img/fotos/microbiologia/GOPR0673.JPG,img/fotos/microbiologia/GOPR0674.JPG,img/fotos/microbiologia/GOPR0675.JPG,img/fotos/microbiologia/GOPR0676.JPG,img/fotos/microbiologia/GOPR0677.JPG,img/fotos/microbiologia/GOPR0678.JPG,img/fotos/microbiologia/GOPR0679.JPG,img/fotos/microbiologia/GOPR0680.JPG,img/fotos/microbiologia/GOPR0682.JPG,img/fotos/microbiologia/GOPR0683.JPG,img/fotos/microbiologia/GOPR0684.JPG,img/fotos/microbiologia/GOPR0685.JPG,img/fotos/microbiologia/GOPR0686.JPG">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <span class="hero-tag">Análisis Histológico y Morfológico</span>
+                <h2>Laboratorio de Microscopía Básica y Avanzada</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- BARRA INTERMEDIA DE RESERVA -->
+    <section class="booking-cta-bar">
+        <div class="content-container booking-cta-container">
+            <div class="booking-cta-text">
+                <span class="booking-cta-icon">📅</span>
+                <div>
+                    <h3>¿Necesitas agendar este laboratorio?</h3>
+                    <p>Reserva tu espacio para prácticas.</p>
+                </div>
+            </div>
+            <a href="https://calendly.com/labsaludcutlajo3/agendar-laboratorio-de-microscopia-basica-y-avanzada" target="_blank" rel="noopener" class="btn btn-booking-action">
+                Agendar Laboratorio ↗
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+        <div class="content-container">
+
+            <!-- INTRODUCCIÓN Y MÉTRICAS DE IMPACTO -->
+            <section class="section-block intro-overview-grid">
+                <div class="intro-card-pro">
+                    <h3 class="section-subtitle">Descripción del Espacio</h3>
+                    <p>Espacio especializado dedicado al estudio y análisis microscópico de estructuras biológicas, tejidos, células y microorganismos.</p>
+                    <p>Este laboratorio proporciona a los estudiantes las herramientas y competencias necesarias para el manejo de equipos de microscopía básica y avanzada, fortaleciendo la observación científica, el análisis morfológico y la interpretación de muestras biológicas fundamentales para la formación en Ciencias de la Salud.</p>
+                </div>
+                
+                <div class="kpi-metrics-card">
+                    <div class="kpi-item">
+                        <span class="kpi-number">33</span>
+                        <span class="kpi-label">Microscopios de Alumno</span>
+                    </div>
+                    <div class="kpi-item">
+                        <span class="kpi-number">100%</span>
+                        <span class="kpi-label">Docencia Proyectada</span>
+                    </div>
+                    <div class="kpi-item">
+                        <span class="kpi-number">HD</span>
+                        <span class="kpi-label">Pantallas de Alta Definición</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TÍTULO DE SECCIÓN -->
+            <div class="block-header-institutional">
+                <h2>INFRAESTRUCTURA Y EQUIPAMIENTO DE MICROSCOPÍA</h2>
+            </div>
+
+            <!-- GALERÍA PRINCIPAL DESTACADA (FEATURED SLIDESHOW) -->
+            <section class="section-block">
+                <article class="featured-gallery-card">
+                    <div class="gallery-slideshow featured-slideshow" data-interval="6000">
+                        <div class="slides-container">
+                            <img src="img/fotos/microbiologia/GOPR0676.JPG" alt="Equipo01" class="gallery-img active">
+                            <img src="img/fotos/microbiologia/GOPR0677.JPG" alt="Equipo02" class="gallery-img">
+                            <img src="img/fotos/microbiologia/GOPR0680.JPG" alt="Equipo03" class="gallery-img">
+                        </div>
+                        <button class="slide-prev" aria-label="Imagen anterior">&#10094;</button>
+                        <button class="slide-next" aria-label="Siguiente imagen">&#10095;</button>
+                        <div class="slide-dots"></div>
+                    </div>
+                    <div class="featured-gallery-info">
+                        <span class="badge-category">Estaciones de Trabajo Individual</span>
+                        <h3>Equipamiento Óptico para Alumnado</h3>
+                        <p>El laboratorio cuenta con 33 microscopios para alumnos, asegurando un entorno de práctica personalizado y continuo para la observación de preparaciones citológicas e histológicas.</p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- DOS GALERÍAS EN PARALELO (GRID PROFESIONAL) -->
+            <section class="section-block">
+                <div class="dual-gallery-grid">
+                    
+                    <!-- GALERÍA 2: MICROSCOPIO DE DOCENCIA -->
+                    <article class="pro-gallery-card">
+                        <div class="gallery-slideshow" data-interval="7000">
+                            <div class="slides-container">
+                                <img src="img/fotos/microbiologia/GOPR0682.JPG" alt="docencia01" class="gallery-img active">
+                                <img src="img/fotos/microbiologia/GOPR0683.JPG" alt="docencia02" class="gallery-img">
+                                <img src="img/fotos/microbiologia/GOPR0680.JPG" alt="docencia03" class="gallery-img">
+                            </div>
+                            <button class="slide-prev" aria-label="Anterior">&#10094;</button>
+                            <button class="slide-next" aria-label="Siguiente">&#10095;</button>
+                            <div class="slide-dots"></div>
+                        </div>
+                        <div class="pro-card-content">
+                            <span class="badge-category-alt">Docencia e Interacción</span>
+                            <h4>Microscopía Avanzada y Proyección Digital</h4>
+                            <p>Contamos con un microscopio para docencia que se proyecta en una pantalla visible para todos, facilitando la explicación clínica en tiempo real.</p>
+                        </div>
+                    </article>
+
+                    <!-- GALERÍA 3: INSUMOS Y BIOLÓGICOS -->
+                    <article class="pro-gallery-card">
+                        <div class="gallery-slideshow" data-interval="8000">
+                            <div class="slides-container">
+                                <img src="img/fotos/microbiologia/GOPR0679.JPG" alt="01" class="gallery-img active">
+                                <img src="img/fotos/microbiologia/GOPR0678.JPG" alt="02" class="gallery-img">
+                                <img src="img/fotos/microbiologia/GOPR0674.JPG" alt="03" class="gallery-img">
+                            </div>
+                            <button class="slide-prev" aria-label="Anterior">&#10094;</button>
+                            <button class="slide-next" aria-label="Siguiente">&#10095;</button>
+                            <div class="slide-dots"></div>
+                        </div>
+                        <div class="pro-card-content">
+                            <span class="badge-category-alt">Bioseguridad</span>
+                            <h4>Manejo de Reactivos y Residuos</h4>
+                            <p>Depósitos RPBI, reactivos y material para uso durante la práctica, cumpliendo con los estándares de seguridad biológica.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- PESTAÑAS DE INFORMACIÓN TÉCNICA Y NORMAS -->
+            <section class="section-block">
+                <div class="tabs-container">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="tab-equipos">Equipamiento Técnico</button>
+                        <button class="tab-btn" data-tab="tab-normas">Normas de Laboratorio y Bioseguridad</button>
+                    </div>
+                    <div class="tabs-content">
+                        <div class="tab-pane active" id="tab-equipos">
+                            <ul class="check-list">
+                                <li><strong>33 Microscopios para Alumnos:</strong> Equipos binoculares de alta precisión con iluminación LED y múltiples objetivos de aumento.</li>
+                                <li><strong>Sistema Proyector Docente:</strong> Microscopio principal equipado con microcámara de alta resolución conectada a pantalla HD para análisis guiado.</li>
+                                <li><strong>Consumibles de Observación:</strong> Portaobjetos, cubreobjetos, aceites de inmersión y colorantes histológicos para tinción.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="tab-normas">
+                            <ul class="check-list">
+                                <li>Uso obligatorio de bata blanca de manga larga y manejo cuidadoso de lentes ópticos.</li>
+                                <li>Manejo responsable de tintes y reactivos químicos; eliminación de portas rotos en contenedores para punzocortantes RPBI.</li>
+                                <li>Limpieza de objetivos con papel óptico al finalizar cada sesión de trabajo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3737.9945457249955!2d-103.4139776!3d20.465417199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f5100319777a3%3A0x31ccbc6255c5307c!2sCUTlajomulco%20(Centro%20Universitario%20de%20Tlajomulco)!5e0!3m2!1ses!2smx!4v1790271450670!5m2!1ses!2smx" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+
+            <div class="footer-info">
+                <h3>Ubicación</h3>
+                <p>Centro Universitario de Tlajomulco</p>
+                <p>Carretera Tlajomulco - Santa Fe Km 3.5, Tlajomulco de Zúñiga, Jalisco, México.</p>
+                <p>Junto a las instalaciones del Edificio F</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Enlaces de Interés</h3>
+                <ul>
+                    <li><a href="https://www.udg.mx" target="_blank" rel="noopener">Universidad de Guadalajara</a></li>
+                    <li><a href="http://cutlajomulco.udg.mx" target="_blank" rel="noopener">Portal CUTLAJO</a></li>
+                </ul>
+
+                <!-- REDES SOCIALES -->
+                <div class="footer-social-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons-wrapper">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/cutlajo" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram CUTLAJO">
+                            <svg viewBox="0 0 24 24" class="svg-social-icon"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+
+                        <!-- X (Twitter) -->
+                        <a href="https://x.com/cutlajo" target="_blank" rel="noopener" class="social-icon-btn" aria-label="X Twitter CUTLAJO">
+                            <svg viewBox="0 0 24 24" class="svg-social-icon"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/CUTlajomulco/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook CUTLAJO">
+                            <svg viewBox="0 0 24 24" class="svg-social-icon"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CUTLAJO Labs - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
