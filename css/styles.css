@@ -56,7 +56,8 @@ body {
   background-color: var(--blanco);
   border-bottom: 4px solid var(--verde-selva);
   padding: 1.5rem 0;
-  position: relative;
+  position: relative; /* Esencial para el posicionamiento del menú móvil */
+  z-index: 1000;
 }
 
 .header-container {
@@ -99,12 +100,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   width: 32px;
-  height: 22px;
+  height: 24px;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 1001;
+  z-index: 1002;
 }
 
 .mobile-menu-toggle .bar {
@@ -112,7 +113,18 @@ body {
   width: 100%;
   background-color: var(--verde-selva);
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Transformación de barras a 'X' cuando el menú se abre */
+.mobile-menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.mobile-menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
 }
 
 /* ==========================================================================
@@ -945,22 +957,24 @@ body {
     font-size: 1.3rem;
   }
 
-  /* Menú de Navegación Móvil */
+  /* Mostrar botón hamburguesa */
   .mobile-menu-toggle {
-    display: flex;
+    display: flex !important;
   }
 
+  /* MENÚ MÓVIL DESPLEGABLE */
   .main-navigation {
     display: none;
     width: 100%;
-    background-color: var(--azul-noche);
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: var(--azul-noche);
+    z-index: 1001;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
 
+  /* REGLA MAESTRA DE DESPLIEGUE CON JS (.is-active) */
   .main-navigation.is-active {
     display: block !important;
   }
@@ -983,7 +997,7 @@ body {
     padding: 1.5rem 2rem;
   }
 
-  /* Submenús en Móvil */
+  /* Submenús dentro del menú móvil */
   .dropdown-menu {
     display: none;
     position: static;
@@ -1013,6 +1027,6 @@ body {
   }
 
   .site-title-group .sub-title {
-    display: none; /* Mantiene la limpieza visual en dispositivos pequeños */
+    display: none;
   }
 }
