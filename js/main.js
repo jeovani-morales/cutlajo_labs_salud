@@ -1,5 +1,5 @@
 /**
- * MAIN.JS - Lógica para Micrositios CUTLAJO
+ * MAIN.JS - Lógica para Micrositios CUTLAJO / UdeG
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLabHeroSlideshow();
   initGallerySlideshows();
   initTabs();
+  initVirtualTours();
 });
 
 /** Menú Responsivo Móvil */
@@ -17,35 +18,75 @@ function initMobileMenu() {
   const mainNav = document.getElementById('mainNav');
 
   if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', () => {
+    // Alternar apertura/cierre del menú móvil al presionar el botón hamburguesa
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       mainNav.classList.toggle('is-active');
       const isExpanded = mainNav.classList.contains('is-active');
       menuToggle.setAttribute('aria-expanded', isExpanded);
     });
+
+    // Cierre automático al hacer clic en enlaces sencillos (excluye toggles de dropdown)
+    const navLinks = mainNav.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-item');
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          mainNav.classList.remove('is-active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // Cierre automático al hacer clic fuera del menú o del botón hamburguesa
+    document.addEventListener('click', (e) => {
+      if (mainNav.classList.contains('is-active')) {
+        if (!mainNav.contains(e.target) && !menuToggle.contains(e.target)) {
+          mainNav.classList.remove('is-active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
   }
 }
 
-/** Dropdown Menú Laboratorios */
+/** Dropdown Menú (Desplegables en Desktop y Móvil) */
 function initDropdownMenu() {
-  const labsDropdown = document.getElementById('labsDropdown');
-  if (!labsDropdown) return;
+  const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
 
-  const toggleBtn = labsDropdown.querySelector('.dropdown-toggle');
+  dropdownItems.forEach((dropdown) => {
+    const toggleBtn = dropdown.querySelector('.dropdown-toggle');
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isShowing = labsDropdown.classList.contains('show');
-      labsDropdown.classList.toggle('show');
-      toggleBtn.setAttribute('aria-expanded', !isShowing);
-    });
-  }
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
 
-  document.addEventListener('click', (e) => {
-    if (!labsDropdown.contains(e.target)) {
-      labsDropdown.classList.remove('show');
-      if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+        // Cerrar otros dropdowns abiertos
+        dropdownItems.forEach((otherDropdown) => {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.classList.remove('show');
+            const otherBtn = otherDropdown.querySelector('.dropdown-toggle');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Alternar el dropdown actual
+        const isShowing = dropdown.classList.contains('show');
+        dropdown.classList.toggle('show');
+        toggleBtn.setAttribute('aria-expanded', !isShowing);
+      });
     }
+  });
+
+  // Cerrar cualquier dropdown abierto al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    dropdownItems.forEach((dropdown) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('show');
+        const toggleBtn = dropdown.querySelector('.dropdown-toggle');
+        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
   });
 }
 
@@ -73,7 +114,7 @@ function initHeroSlideshow() {
 /** Hero Banner en Páginas de Laboratorios (Secundarias) */
 function initLabHeroSlideshow() {
   const labHeroes = document.querySelectorAll('.lab-hero');
-  
+
   labHeroes.forEach((labHero) => {
     const rawImages = labHero.getAttribute('data-bg-images');
     if (!rawImages) return;
@@ -82,11 +123,8 @@ function initLabHeroSlideshow() {
     if (imagesArray.length === 0) return;
 
     let currentIndex = 0;
-    
-    // Carga inicial directa de la primera imagen
     labHero.style.backgroundImage = `url('${imagesArray[0]}')`;
 
-    // Rotación cada 8 segundos
     if (imagesArray.length > 1) {
       setInterval(() => {
         currentIndex = (currentIndex + 1) % imagesArray.length;
@@ -173,29 +211,27 @@ function initTabs() {
   });
 }
 
-/* ==========================================================================
-       6. SISTEMA DE FILTRADO PARA RECORRIDOS VIRTUALES 360°
-       ========================================================================== */
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const tourCards = document.querySelectorAll('.tour-card-item');
+/** Sistema de Filtrado para Recorridos Virtuales 360° */
+function initVirtualTours() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const tourCards = document.querySelectorAll('.tour-card-item');
 
-    if (filterButtons.length > 0 && tourCards.length > 0) {
-        filterButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
-                const filterValue = this.dataset.filter;
+  if (filterButtons.length > 0 && tourCards.length > 0) {
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', function() {
+        const filterValue = this.dataset.filter;
 
-                // Cambia el estado activo del botón
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
 
-                // Filtra los recorridos 360
-                tourCards.forEach(function(card) {
-                    if (filterValue === 'all' || card.dataset.category === filterValue) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
+        tourCards.forEach((card) => {
+          if (filterValue === 'all' || card.dataset.category === filterValue) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
         });
-    }
+      });
+    });
+  }
+}
