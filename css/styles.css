@@ -39,6 +39,7 @@ body {
   background-color: #f4f6f8;
 }
 
+/* CONTENEDORES GLOBALES */
 .content-container,
 .header-container,
 .nav-container,
@@ -48,7 +49,9 @@ body {
   margin: 0 auto;
 }
 
-/* CABECERA (HEADER) */
+/* ==========================================================================
+   CABECERA (HEADER) Y LOGO
+   ========================================================================== */
 .site-header {
   background-color: var(--blanco);
   border-bottom: 4px solid var(--verde-selva);
@@ -65,24 +68,26 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
+  max-width: calc(100% - 45px); /* Previene colisión con el botón hamburguesa */
 }
 
 .header-logo {
-  max-height: 75px;
+  max-height: clamp(45px, 6vw, 75px);
   width: auto;
+  object-fit: contain;
 }
 
 .site-title-group .sub-title {
   display: block;
-  font-size: 1.6rem;
+  font-size: clamp(0.9rem, 1.5vw, 1.6rem);
   color: var(--gris-neutro);
   text-transform: uppercase;
   font-weight: 500;
 }
 
 .site-title-group .main-title {
-  font-size: 2.8rem;
+  font-size: clamp(1.4rem, 2.5vw, 2.8rem);
   color: var(--verde-selva);
   font-weight: 700;
   line-height: 1.1;
@@ -110,7 +115,9 @@ body {
   transition: all 0.3s ease;
 }
 
-/* NAVEGACIÓN (DESKTOP) */
+/* ==========================================================================
+   NAVEGACIÓN (DESKTOP)
+   ========================================================================== */
 .main-navigation {
   background-color: var(--azul-noche);
   position: relative;
@@ -193,7 +200,9 @@ body {
   padding-left: 2.5rem;
 }
 
-/* HERO BANNER Y SLIDESHOW PRINCIPAL */
+/* ==========================================================================
+   HERO BANNER Y SLIDESHOW PRINCIPAL
+   ========================================================================== */
 .hero-banner {
   position: relative;
   background-color: var(--verde-oscuro);
@@ -252,7 +261,9 @@ body {
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
-/* ESTRUCTURA Y CONTENIDO GENERAL */
+/* ==========================================================================
+   ESTRUCTURA Y CONTENIDO GENERAL
+   ========================================================================== */
 .main-content {
   padding: 4rem 0;
 }
@@ -393,7 +404,7 @@ body {
 }
 
 .quick-link-box {
-  background: #fff;
+  background: var(--blanco);
   padding: 2.5rem;
   border-radius: 6px;
   box-shadow: var(--sombra-card);
@@ -419,7 +430,7 @@ body {
 }
 
 .intro-card-pro {
-  background-color: #ffffff;
+  background-color: var(--blanco);
   padding: 2.5rem;
   border-left: 5px solid var(--verde-selva);
   border-radius: 6px;
@@ -427,8 +438,8 @@ body {
 }
 
 .kpi-metrics-card {
-  background: linear-gradient(135deg, #054f56 0%, #006838 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde-selva) 100%);
+  color: var(--blanco);
   padding: 2.5rem 2rem;
   border-radius: 6px;
   display: flex;
@@ -450,7 +461,7 @@ body {
   display: block;
   font-size: 3.2rem;
   font-weight: 800;
-  color: #21b572;
+  color: var(--verde-esmeralda);
 }
 
 .kpi-label {
@@ -461,7 +472,7 @@ body {
 .featured-gallery-card {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  background-color: #ffffff;
+  background-color: var(--blanco);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--sombra-card);
@@ -486,7 +497,7 @@ body {
 }
 
 .pro-gallery-card {
-  background-color: #ffffff;
+  background-color: var(--blanco);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--sombra-card);
@@ -532,7 +543,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(5, 79, 86, 0.75);
-  color: #ffffff;
+  color: var(--blanco);
   border: none;
   font-size: 1.8rem;
   padding: 0.8rem 1.2rem;
@@ -563,13 +574,13 @@ body {
 }
 
 .dot.active {
-  background-color: #21b572;
+  background-color: var(--verde-esmeralda);
   transform: scale(1.2);
 }
 
 /* PESTAÑAS (TABS) */
 .tabs-container {
-  background-color: #ffffff;
+  background-color: var(--blanco);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--sombra-card);
@@ -591,7 +602,7 @@ body {
 }
 
 .tab-btn.active {
-  background-color: #ffffff;
+  background-color: var(--blanco);
   color: var(--verde-selva);
   border-top: 3px solid var(--verde-selva);
 }
@@ -623,46 +634,8 @@ body {
   content: "✓";
   position: absolute;
   left: 0;
-  color: #21b572;
-  font-weight: bold;
-}
-
-/* PIE DE PÁGINA (FOOTER) */
-.site-footer {
-  background-color: var(--azul-noche);
-  color: var(--blanco);
-  padding-top: 4rem;
-  margin-top: 4rem;
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  padding-bottom: 3rem;
-}
-
-.footer-info h3, .footer-links h3 {
-  font-size: 2.2rem;
   color: var(--verde-esmeralda);
-  margin-bottom: 1rem;
-}
-
-.footer-links ul {
-  list-style: none;
-}
-
-.footer-links a {
-  color: #d0d0d0;
-  text-decoration: none;
-  font-size: 1.8rem;
-}
-
-.footer-bottom {
-  background-color: rgba(0, 0, 0, 0.2);
-  text-align: center;
-  padding: 1.5rem 0;
-  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 /* BARRA INTERMEDIA DE RESERVA DE LABORATORIOS */
@@ -744,7 +717,7 @@ body {
 .filter-btn {
   background-color: #f1f1f1;
   color: #333;
-  border: 2px solid #0174c3;
+  border: 2px solid var(--azul-principal-web);
   padding: 10px 18px;
   font-size: 1.4rem;
   font-weight: 600;
@@ -755,8 +728,8 @@ body {
 
 .filter-btn:hover,
 .filter-btn.active {
-  background-color: #0174c3;
-  color: #ffffff;
+  background-color: var(--azul-principal-web);
+  color: var(--blanco);
 }
 
 .tours-grid {
@@ -767,7 +740,7 @@ body {
 }
 
 .tour-card-item {
-  background: #ffffff;
+  background: var(--blanco);
   border-radius: 8px;
   border: 1px solid #e2e8f0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -776,8 +749,8 @@ body {
 }
 
 .tour-header-info {
-  background-color: #054f56;
-  color: #ffffff;
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -793,8 +766,8 @@ body {
 }
 
 .tour-badge {
-  background-color: #21b572;
-  color: #ffffff;
+  background-color: var(--verde-esmeralda);
+  color: var(--blanco);
   padding: 4px 12px;
   border-radius: 12px;
   font-size: 1.2rem;
@@ -819,7 +792,7 @@ body {
 
 .tour-footer-info {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--gris-claro);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -830,11 +803,41 @@ body {
 .tour-footer-info p {
   margin: 0;
   font-size: 1.5rem;
-  color: #414141;
+  color: var(--gris-neutro);
   max-width: 75%;
 }
 
-/* REDES SOCIALES EN FOOTER */
+/* PIE DE PÁGINA (FOOTER) */
+.site-footer {
+  background-color: var(--azul-noche);
+  color: var(--blanco);
+  padding-top: 4rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer-info h3, .footer-links h3 {
+  font-size: 2.2rem;
+  color: var(--verde-esmeralda);
+  margin-bottom: 1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links a {
+  color: #d0d0d0;
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+
 .footer-social-section {
   margin-top: 20px;
   padding-top: 15px;
@@ -842,7 +845,7 @@ body {
 }
 
 .footer-social-section h4 {
-  color: #ffffff;
+  color: var(--blanco);
   font-size: 1.4rem;
   margin-bottom: 12px;
   text-transform: uppercase;
@@ -869,21 +872,28 @@ body {
 .svg-social-icon {
   width: 18px;
   height: 18px;
-  fill: #ffffff;
+  fill: var(--blanco);
   transition: fill 0.3s ease;
 }
 
 .social-icon-btn:hover {
-  background-color: #21b572;
+  background-color: var(--verde-esmeralda);
   transform: translateY(-3px);
 }
 
 .social-icon-btn:hover .svg-social-icon {
-  fill: #ffffff;
+  fill: var(--blanco);
+}
+
+.footer-bottom {
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 1.6rem;
 }
 
 /* ==========================================================================
-   MEDIA QUERIES Y REGLAS RESPONSIVAS
+   MEDIA QUERIES Y REGLAS RESPONSIVAS (UNIFICADAS Y REFINADAS)
    ========================================================================== */
 @media (max-width: 900px) {
   .intro-overview-grid,
@@ -895,6 +905,10 @@ body {
 
 @media (max-width: 768px) {
   /* Layout general responsive */
+  .header-container {
+    padding: 0 1rem;
+  }
+
   .booking-cta-container {
     flex-direction: column;
     text-align: center;
@@ -948,7 +962,7 @@ body {
   }
 
   .main-navigation.is-active {
-    display: block;
+    display: block !important;
   }
 
   .nav-menu {
@@ -969,13 +983,19 @@ body {
     padding: 1.5rem 2rem;
   }
 
+  /* Submenús en Móvil */
   .dropdown-menu {
+    display: none;
     position: static;
     width: 100%;
     background-color: #1f1f35;
     box-shadow: none;
     border-top: none;
     border-left: 4px solid var(--verde-esmeralda);
+  }
+
+  .nav-item.dropdown.show .dropdown-menu {
+    display: block !important;
   }
 
   .dropdown-item {
@@ -988,7 +1008,11 @@ body {
 }
 
 @media (max-width: 480px) {
+  .logo-container {
+    gap: 0.8rem;
+  }
+
   .site-title-group .sub-title {
-    display: none;
+    display: none; /* Mantiene la limpieza visual en dispositivos pequeños */
   }
 }
