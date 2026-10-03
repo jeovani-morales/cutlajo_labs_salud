@@ -2,11 +2,7 @@
  * MAIN.JS - Lógica para Micrositios CUTLAJO / UdeG
  */
 
-document.addEventListener('DOMContentLoaded', async () => {
-  // Cargar componentes dinámicos (header y footer) de forma asíncrona
-  await loadComponents();
-
-  // Inicializar listeners e interactividad del sitio una vez insertados en el DOM
+document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initDropdownMenu();
   initHeroSlideshow();
@@ -15,46 +11,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   initTabs();
   initVirtualTours();
 });
-
-/** Cargador modular de Header y Footer */
-async function loadComponents() {
-  const headerElem = document.getElementById('siteHeader');
-  const footerElem = document.getElementById('siteFooter');
-
-  if (headerElem) {
-    try {
-      const res = await fetch('includes/header.html');
-      if (res.ok) {
-        headerElem.innerHTML = await res.responseText();
-        highlightActiveLink();
-      }
-    } catch (e) { console.error('Error cargando el header:', e); }
-  }
-
-  if (footerElem) {
-    try {
-      const res = await fetch('includes/footer.html');
-      if (res.ok) footerElem.innerHTML = await res.responseText();
-    } catch (e) { console.error('Error cargando el footer:', e); }
-  }
-}
-
-/** Destaca el enlace actual en la navegación */
-function highlightActiveLink() {
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.main-navigation .nav-link, .main-navigation .dropdown-item');
-
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPath) {
-      const parentLi = link.closest('.nav-item');
-      if (parentLi) parentLi.classList.add('active');
-      
-      const parentDropdown = link.closest('.dropdown');
-      if (parentDropdown) parentDropdown.classList.add('active');
-    }
-  });
-}
 
 /** Menú Responsivo Móvil */
 function initMobileMenu() {
