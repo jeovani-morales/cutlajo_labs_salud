@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Página no encontrada (404) | CUTLAJO - Universidad de Guadalajara</title>
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- CABECERA INSTITUCIONAL -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="img/anatomia_humana_logo.png" alt="Logo UdeG CUTLAJO" class="header-logo">
+                </a>
+                <div class="site-title-group">
+                    <span class="sub-title">Centro Universitario de Tlajomulco</span>
+                    <h1 class="main-title">Laboratorios de Salud</h1>
+                </div>
+            </div>
+
+            <!-- BOTÓN MENÚ MÓVIL (HAMBURGUESA) -->
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+
+        <!-- NAVEGACIÓN PRINCIPAL -->
+        <nav class="main-navigation" id="mainNav">
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" aria-expanded="false">
+                            Laboratorios <span class="arrow-icon">▼</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="anatomia.html" class="dropdown-item">Anatomía y Fisiología</a></li>
+                            <li><a href="microscopia.html" class="dropdown-item">Microbiología y Bioquímica</a></li>
+                            <li><a href="ciencias.html" class="dropdown-item">Ciencias Fisiológicas</a></li>
+                            <li><a href="simulacion.html" class="dropdown-item">Simulación Hospitalaria</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a href="recorridos-virtuales.html" class="nav-link">Recorridos Virtuales</a></li>
+                    <li class="nav-item"><a href="reglamento.html" class="nav-link">Reglamento</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL ERROR 404 -->
+    <main class="main-content">
+        <div class="content-container">
+
+            <section class="error-404-wrapper">
+                <div class="error-404-card">
+                    
+                    <!-- IMAGEN PROPIA DE ERROR 404 -->
+                    <div class="error-image-box">
+                        <img src="img/error_404.png" alt="Página no encontrada - Error 404 CUTLAJO" class="error-404-img">
+                    </div>
+
+                    <div class="error-details">
+                        <span class="error-code-badge">ERROR 404</span>
+                        <h2>Página en Construcción o No Encontrada</h2>
+                        <p>Lo sentimos, el recurso al que intentas acceder no está disponible o aún se encuentra en proceso de desarrollo en el portal de Laboratorios CUTLAJO.</p>
+                        
+                        <div class="error-actions">
+                            <a href="index.html" class="btn btn-primary">Volver al Inicio</a>
+                            <button onclick="window.history.back()" class="btn btn-secondary">Regresar a la página anterior</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer" id="siteFooter">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>CUTLAJO - Universidad de Guadalajara</h3>
+                <p>Centro Universitario de Tlajomulco de Zúñiga</p>
+                <p>Carretera Tlajomulco - Santa Fe Km 3.5, Tlajomulco de Zúñiga, Jalisco, México.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="recorridos-virtuales.html">Recorridos Virtuales</a></li>
+                    <li><a href="reglamento.html">Reglamento de Laboratorios</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Universidad de Guadalajara - Centro Universitario de Tlajomulco. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
