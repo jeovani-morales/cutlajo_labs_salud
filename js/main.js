@@ -77,7 +77,9 @@ function initHeroSlideshow() {
     'img/slideshow_principal/fondo01.JPG',
     'img/slideshow_principal/fondo02.JPG',
     'img/slideshow_principal/fondo03.JPG',
-    'img/slideshow_principal/fondo04.JPG'
+    'img/slideshow_principal/fondo04.JPG',
+    'img/slideshow_principal/fondo04.png',
+    'img/slideshow_principal/fondo05.png'
   ];
 
   let currentIndex = 0;

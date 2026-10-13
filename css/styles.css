@@ -37,6 +37,7 @@ body {
   line-height: 1.6;
   color: var(--gris-neutro);
   background-color: #f4f6f8;
+  text-align: justify;
 }
 
 /* CONTENEDORES GLOBALES */
@@ -54,8 +55,8 @@ body {
    ========================================================================== */
 .site-header {
   background-color: var(--blanco);
-  border-bottom: 4px solid var(--verde-selva);
-  padding: 1.5rem 0;
+  /*border-bottom: 4px solid var(--verde-selva);
+  padding: 1.5rem 0;*/
   position: relative; /* Esencial para el posicionamiento del menú móvil */
   z-index: 1000;
 }
@@ -64,6 +65,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1.5rem 0;
 }
 
 .logo-container {
