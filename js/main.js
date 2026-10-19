@@ -3,6 +3,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  highlightActiveLink();
   initMobileMenu();
   initDropdownMenu();
   initHeroSlideshow();
@@ -11,6 +12,23 @@ document.addEventListener('DOMContentLoaded', () => {
   initTabs();
   initVirtualTours();
 });
+
+/** Destaca el enlace activo según la página actual */
+function highlightActiveLink() {
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.main-navigation .nav-link, .main-navigation .dropdown-item');
+
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath) {
+      const parentLi = link.closest('.nav-item');
+      if (parentLi) parentLi.classList.add('active');
+      
+      const parentDropdown = link.closest('.dropdown');
+      if (parentDropdown) parentDropdown.classList.add('active');
+    }
+  });
+}
 
 /** Menú Responsivo Móvil */
 function initMobileMenu() {
@@ -25,7 +43,6 @@ function initMobileMenu() {
       menuToggle.classList.toggle('open', isActive);
     });
 
-    // Cierre al hacer clic fuera del menú
     document.addEventListener('click', (e) => {
       if (mainNav.classList.contains('is-active') && !mainNav.contains(e.target) && !menuToggle.contains(e.target)) {
         mainNav.classList.remove('is-active');
@@ -36,7 +53,7 @@ function initMobileMenu() {
   }
 }
 
-/** Dropdown Menú (Desplegables en Desktop y Móvil) */
+/** Dropdown Menú */
 function initDropdownMenu() {
   const dropdowns = document.querySelectorAll('.nav-item.dropdown');
 
@@ -51,7 +68,6 @@ function initDropdownMenu() {
         const parent = toggleBtn.closest('.dropdown');
         const isShowing = parent.classList.contains('show');
 
-        // Cerrar otros desplegables abiertos
         dropdowns.forEach((item) => {
           if (item !== parent) {
             item.classList.remove('show');
@@ -60,7 +76,6 @@ function initDropdownMenu() {
           }
         });
 
-        // Alternar el actual
         parent.classList.toggle('show', !isShowing);
         toggleBtn.setAttribute('aria-expanded', !isShowing);
       });
@@ -68,7 +83,7 @@ function initDropdownMenu() {
   });
 }
 
-/** Slideshow Hero Principal (index.html) */
+/** Slideshow Hero Principal */
 function initHeroSlideshow() {
   const heroBanner = document.querySelector('.hero-banner:not(.lab-hero)');
   if (!heroBanner) return;
@@ -77,9 +92,7 @@ function initHeroSlideshow() {
     'img/slideshow_principal/fondo01.JPG',
     'img/slideshow_principal/fondo02.JPG',
     'img/slideshow_principal/fondo03.JPG',
-    'img/slideshow_principal/fondo04.JPG',
-    'img/slideshow_principal/fondo04.png',
-    'img/slideshow_principal/fondo05.png'
+    'img/slideshow_principal/fondo04.JPG'
   ];
 
   let currentIndex = 0;
@@ -91,7 +104,7 @@ function initHeroSlideshow() {
   }, 10000);
 }
 
-/** Hero Banner en Páginas de Laboratorios (Secundarias) */
+/** Hero Banner Secundarios */
 function initLabHeroSlideshow() {
   const labHeroes = document.querySelectorAll('.lab-hero');
 
@@ -114,7 +127,7 @@ function initLabHeroSlideshow() {
   });
 }
 
-/** Galerías Internas con Flechas e Indicadores */
+/** Galerías Internas */
 function initGallerySlideshows() {
   const slideshows = document.querySelectorAll('.gallery-slideshow');
 
@@ -171,27 +184,43 @@ function initGallerySlideshows() {
   });
 }
 
-/** Sistema de Pestañas (Tabs) */
+/** Sistema de Pestañas (Tabs) con soporte para Hash directo (#tab-nombre) */
 function initTabs() {
   const tabBtns = document.querySelectorAll('.tab-btn');
+  if (tabBtns.length === 0) return;
+
+  function activateTab(targetId, container) {
+    if (!container) return;
+    container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    container.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+
+    const activeBtn = container.querySelector(`.tab-btn[data-tab="${targetId}"]`);
+    const activePane = container.querySelector(`#${targetId}`);
+
+    if (activeBtn) activeBtn.classList.add('active');
+    if (activePane) activePane.classList.add('active');
+  }
+
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-tab');
       const container = btn.closest('.tabs-container');
-
-      if (!container) return;
-
-      container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      container.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-
-      btn.classList.add('active');
-      const targetPane = container.querySelector(`#${targetId}`);
-      if (targetPane) targetPane.classList.add('active');
+      activateTab(targetId, container);
     });
   });
+
+  // Activar pestaña si la URL contiene un hash (ejemplo: reglamento.html#tab-microscopia)
+  const currentHash = window.location.hash.replace('#', '');
+  if (currentHash) {
+    const targetPane = document.getElementById(currentHash);
+    if (targetPane && targetPane.classList.contains('tab-pane')) {
+      const container = targetPane.closest('.tabs-container');
+      activateTab(currentHash, container);
+    }
+  }
 }
 
-/** Sistema de Filtrado para Recorridos Virtuales 360° */
+/** Recorridos Virtuales 360° */
 function initVirtualTours() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const tourCards = document.querySelectorAll('.tour-card-item');

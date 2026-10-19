@@ -71,7 +71,7 @@
     </section>
 
     <!-- BARRA INTERMEDIA DE RESERVA -->
-    <section class="booking-cta-bar">
+    <!-- <section class="booking-cta-bar">
         <div class="content-container booking-cta-container">
             <div class="booking-cta-text">
                 <span class="booking-cta-icon">📅</span>
@@ -80,11 +80,11 @@
                     <p>Reserva tu espacio para prácticas.</p>
                 </div>
             </div>
-            <a href="https://calendly.com/labsaludcutlajo4/agendar-laboratorio-de-anatomia-humana-y-tecnicas-quirurgicas" target="_blank" rel="noopener" class="btn btn-booking-action">
+            <a href="https://calendar.app.google/Dbvhzh31awpc4mxa6" target="_blank" rel="noopener" class="btn btn-booking-action">
                 Agendar Laboratorio ↗
             </a>
         </div>
-    </section>
+    </section> -->
 
 
     <!-- CONTENIDO PRINCIPAL -->
@@ -110,7 +110,7 @@
                         <span class="kpi-label">Visores de Realidad Virtual</span>
                     </div>
                     <div class="kpi-item">
-                        <span class="kpi-number">FHD</span>
+                        <span class="kpi-number">HD</span>
                         <span class="kpi-label">Pantallas de Alta Definición</span>
                     </div>
                 </div>
@@ -214,11 +214,16 @@
             <!-- PESTAÑAS DE INFORMACIÓN TÉCNICA Y NORMAS -->
             <section class="section-block">
                 <div class="tabs-container">
+                    <!-- ENCABEZADO DE PESTAÑAS -->
                     <div class="tabs-header">
                         <button class="tab-btn active" data-tab="tab-equipos">Equipamiento Disponible</button>
                         <button class="tab-btn" data-tab="tab-normas">Normas de Seguridad y RPBI</button>
+                        <button class="tab-btn" data-tab="tab-reglamento">Reglamento del Laboratorio</button>
                     </div>
+
+                    <!-- CONTENIDO DE PESTAÑAS -->
                     <div class="tabs-content">
+                        <!-- PESTAÑA 1: EQUIPAMIENTO -->
                         <div class="tab-pane active" id="tab-equipos">
                             <ul class="check-list">
                                 <li><strong>Mobiliario Especializado:</strong> Mesas de disección e instrumental quirúrgico en acero inoxidable con tarjas integradas.</li>
@@ -226,6 +231,8 @@
                                 <li><strong>Modelos Anatómicos:</strong> Esqueletos articulados, torso humano con órganos desmontables, modelos musculares y neuroanatómicos.</li>
                             </ul>
                         </div>
+
+                        <!-- PESTAÑA 2: NORMAS DE SEGURIDAD -->
                         <div class="tab-pane" id="tab-normas">
                             <ul class="check-list">
                                 <li>Uso obligatorio de bata blanca de manga larga, guantes de nitrilo/látex y cubrebocas durante la estancia.</li>
@@ -233,12 +240,42 @@
                                 <li>Prohibido el ingreso de alimentos, bebidas y objetos ajenos a la práctica clínica.</li>
                             </ul>
                         </div>
+
+                        <!-- PESTAÑA 3: REGLAMENTO OFICIAL -->
+                        <div class="tab-pane" id="tab-reglamento">
+                            <div class="tab-reglamento-box">
+                                <h3>Reglamento Oficial de Uso y Bioseguridad</h3>
+                                <p>Para garantizar un entorno seguro y adecuado durante la realización de prácticas clínicas y docencia, el ingreso a este laboratorio está sujeto al cumplimiento estricto del reglamento interno vigente.</p>
+                                <div class="tab-reglamento-actions">
+                                    <a href="reglamento.html" class="btn btn-primary">
+                                        Consultar Reglamento Completo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-
+            <!-- CALENDARIO DE DISPONIBILIDAD AMBIENTADO (JUSTO ARRIBA DEL FOOTER) -->
+            <section class="section-block" id="calendarioAnatomia">
+                <div class="institutional-header">
+                    <h2>DISPONIBILIDAD Y HORARIOS DEL LABORATORIO</h2>
+                </div>
+                <div class="calendar-card">
+                    <p class="calendar-intro-text">Consulta los eventos, sesiones clínicas y horarios programados en el Laboratorio de Anatomía Humana a través del calendario oficial institucional:</p>
+                    <div class="calendar-iframe-wrapper">
+                        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=America%2FMexico_City&showPrint=0&showCalendars=0&mode=WEEK&src=Y19lZDI3ODQ0NzcxNDg2NDZiN2RhYTUyODFlMDg4N2M4NzVhOGU3ZThhMTI4OGEwNDhmYzljMzJjNDM1ZDA0NDViQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23006838" 
+                                title="Calendario de Disponibilidad del Laboratorio de Anatomía Humana" 
+                                frameborder="0" 
+                                scrolling="no">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
+
+    
 
     <!-- PIE DE PÁGINA -->
     <footer class="site-footer">
